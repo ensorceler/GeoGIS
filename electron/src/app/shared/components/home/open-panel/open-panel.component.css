@@ -1,0 +1,18 @@
+.show-panel {
+    @apply max-w-[440px] block w-[25vw] ;
+}
+
+.editor {
+    height: calc(100vh - 150px);
+}
+
+
+/* Ensure CodeMirror editor takes full height */
+.cm-editor {
+    height: 100%;
+}
+
+:host ::ng-deep .monaco-editor {
+    width: 100% !important;
+    height: 100% !important;
+}

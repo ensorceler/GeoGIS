@@ -1,0 +1,13 @@
+.show-panel {
+    @apply max-w-[440px] block w-[25vw];
+}
+
+#editor {
+    @apply h-[800px];
+    //background-color: #1e1e1e;
+}
+
+/* Ensure CodeMirror editor takes full height */
+.cm-editor {
+    height: 100%;
+}

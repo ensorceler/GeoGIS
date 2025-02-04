@@ -1,0 +1,138 @@
+<div class="w-full relative">
+    <div class="nav-background-dark  flex justify-between bg-purple-900 h-12 px-8 py-2">
+        <h1 class="text-white text-xl font-semibold">geogis</h1>
+        <div class="flex flex-row gap-2">
+        </div>
+    </div>
+    <div class="absolute -bottom-12 z-50">
+        <hlm-menu-bar class="w-fit">
+            <button hlmMenuBarItem [brnMenuTriggerFor]="file">File</button>
+            <button hlmMenuBarItem [brnMenuTriggerFor]="edit">Edit</button>
+            <button hlmMenuBarItem [brnMenuTriggerFor]="view">View</button>
+            <button hlmMenuBarItem [brnMenuTriggerFor]="export">Export</button>
+        </hlm-menu-bar>
+
+        <ng-template #file>
+            <hlm-menu variant="menubar" class="w-48">
+                <hlm-menu-group>
+                    <button hlmMenuItem>
+                        New Tab
+                        <hlm-menu-shortcut>⌘T</hlm-menu-shortcut>
+                    </button>
+                    <button hlmMenuItem>
+                        New Window
+                        <hlm-menu-shortcut>⌘N</hlm-menu-shortcut>
+                    </button>
+                    <button hlmMenuItem disabled>New Incognito Window</button>
+                </hlm-menu-group>
+
+                <hlm-menu-separator/>
+
+                <button hlmMenuItem [brnMenuTriggerFor]="share">
+                    Share
+                    <hlm-menu-item-sub-indicator/>
+                </button>
+
+                <hlm-menu-separator/>
+
+                <button hlmMenuItem>
+                    Print...
+                    <hlm-menu-shortcut>⌘P</hlm-menu-shortcut>
+                </button>
+            </hlm-menu>
+        </ng-template>
+        <ng-template #share>
+            <hlm-sub-menu>
+                <button hlmMenuItem>Email link</button>
+                <button hlmMenuItem>Messages</button>
+                <button hlmMenuItem>Notes</button>
+            </hlm-sub-menu>
+        </ng-template>
+
+        <ng-template #edit>
+            <hlm-menu variant="menubar" class="w-48">
+                <hlm-menu-group>
+                    <button hlmMenuItem>
+                        Undo
+                        <hlm-menu-shortcut>⌘Z</hlm-menu-shortcut>
+                    </button>
+                    <button hlmMenuItem>
+                        Redo
+                        <hlm-menu-shortcut>⇧⌘Z</hlm-menu-shortcut>
+                    </button>
+                </hlm-menu-group>
+
+                <hlm-menu-separator/>
+
+                <button hlmMenuItem [brnMenuTriggerFor]="find">
+                    Share
+                    <hlm-menu-item-sub-indicator/>
+                </button>
+
+                <hlm-menu-separator/>
+
+                <button hlmMenuItem>Cut</button>
+                <button hlmMenuItem>Copy</button>
+                <button hlmMenuItem>Paste</button>
+            </hlm-menu>
+        </ng-template>
+        <ng-template #find>
+            <hlm-sub-menu>
+                <button hlmMenuItem>Search the web</button>
+                <hlm-menu-separator/>
+                <button hlmMenuItem>Find...</button>
+                <button hlmMenuItem>Find Next</button>
+                <button hlmMenuItem>Find Previous</button>
+            </hlm-sub-menu>
+        </ng-template>
+
+        <ng-template #view>
+            <hlm-menu variant="menubar">
+                <button hlmMenuItemCheckbox>
+                    <hlm-menu-item-check/>
+                    Always Show Bookmarks Bar
+                </button>
+                <button hlmMenuItemCheckbox checked>
+                    <hlm-menu-item-check/>
+                    Always Show Full URLs
+                </button>
+                <hlm-menu-separator/>
+                <button inset hlmMenuItem>
+                    Reload
+                    <hlm-menu-shortcut>⌘R</hlm-menu-shortcut>
+                </button>
+                <button inset disabled hlmMenuItem>
+                    Force Reload
+                    <hlm-menu-shortcut>⇧⌘R</hlm-menu-shortcut>
+                </button>
+                <hlm-menu-separator/>
+                <button inset hlmMenuItem>Toggle Fullscreen</button>
+                <hlm-menu-separator/>
+                <button inset hlmMenuItem>Hide Sidebar</button>
+            </hlm-menu>
+        </ng-template>
+
+        <ng-template #export>
+            <hlm-menu variant="menubar" class="w-48">
+                <button hlmMenuItem>
+                    GeoJSON
+                </button>
+                <button hlmMenuItem>
+                   KML
+                </button>
+                <button hlmMenuItem>
+                   TopoJSON
+                </button>
+                <button hlmMenuItem>
+                   CSV
+                </button>
+                <button hlmMenuItem>
+                    WKT
+                </button>
+                <button hlmMenuItem>
+                   Shapefile
+                </button>
+            </hlm-menu>
+        </ng-template>
+    </div>
+</div>

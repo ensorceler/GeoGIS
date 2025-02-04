@@ -1,0 +1,25 @@
+<div class="hidden" [ngClass]="{'show-panel':panelService.panelState()}">
+    <div class="flex flex-col gap-4">
+        <hlm-tabs tab="geojson" class="w-full">
+            <hlm-tabs-list [tabIndex]="0"   class="w-full grid grid-cols-2" aria-label="tabs example">
+                <button hlmTabsTrigger="geojson" >GeoJSON</button>
+                <button hlmTabsTrigger="table">Table</button>
+            </hlm-tabs-list>
+            <div hlmTabsContent="geojson" class="max-h-screen overflow-y-scroll">
+                <div id="editor" class="h-[800px]">
+                </div>
+            </div>
+            <div hlmTabsContent="table">
+                <section hlmCard>
+                    <div hlmCardHeader>
+                    </div>
+                    <div hlmCardContent>
+                        Nothing to see here, in development!
+                    </div>
+                    <div hlmCardFooter>
+                    </div>
+                </section>
+            </div>
+        </hlm-tabs>
+    </div>
+</div>

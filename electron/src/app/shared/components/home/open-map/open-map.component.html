@@ -1,0 +1,11 @@
+<div class="map-container relative flex-1"
+     [ngClass]="{'map-container-panel-on':panelService.panelState(),'cursor-crosshair':drawingService.drawingActivated()}">
+    <div id="ol-map" class="openlayers-map h-100 w-100"></div>
+    <app-draw-features [(map)]="map"></app-draw-features>
+    <app-base-map [(map)]="map"></app-base-map>
+    <div class="absolute bottom-12 right-4 bg-white px-3 py-2 h-8 flex justify-center items-center rounded-md">
+        <button>
+            <fa-icon [icon]="panelService.panelState()?faArrowRight:faArrowLeft" (click)="openPanel()"></fa-icon>
+        </button>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+<div class="draw-controls">
+    <!-- Point Button -->
+    <hlm-tooltip>
+        <span *brnTooltipContent class="text-xs">Draw Point</span>
+        <button hlmTooltipTrigger position="left" class="control rounded-t-md" [ngClass]="{'chosen-control':drawType==='point'}" (click)="activateDraw('point')">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" height="20" width="20">
+                <path d="M12 21C15.5 17.4 19 14.1764 19 10.2C19 6.22355 15.866 3 12 3C8.13401 3 5 6.22355 5 10.2C5 14.1764 8.5 17.4 12 21Z"
+                      stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z"
+                      stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+    </hlm-tooltip>
+
+    <!-- Line Button -->
+    <hlm-tooltip>
+        <span *brnTooltipContent class="text-xs">Draw Line</span>
+        <button hlmTooltipTrigger position="left" class="control" [ngClass]="{'chosen-control':drawType==='line'}" (click)="activateDraw('line')">
+            <svg viewBox="0 0 24 24" height="24" width="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M18 5C17.4477 5 17 5.44772 17 6C17 6.27642 17.1108 6.52505 17.2929 6.70711C17.475 6.88917 17.7236 7 18 7C18.5523 7 19 6.55228 19 6C19 5.44772 18.5523 5 18 5ZM15 6C15 4.34315 16.3431 3 18 3C19.6569 3 21 4.34315 21 6C21 7.65685 19.6569 9 18 9C17.5372 9 17.0984 8.8948 16.7068 8.70744L8.70744 16.7068C8.8948 17.0984 9 17.5372 9 18C9 19.6569 7.65685 21 6 21C4.34315 21 3 19.6569 3 18C3 16.3431 4.34315 15 6 15C6.46278 15 6.90157 15.1052 7.29323 15.2926L15.2926 7.29323C15.1052 6.90157 15 6.46278 15 6ZM6 17C5.44772 17 5 17.4477 5 18C5 18.5523 5.44772 19 6 19C6.55228 19 7 18.5523 7 18C7 17.7236 6.88917 17.475 6.70711 17.2929C6.52505 17.1108 6.27642 17 6 17Z"
+                      fill="#000000"/>
+            </svg>
+        </button>
+    </hlm-tooltip>
+
+    <!-- Circle Button -->
+    <hlm-tooltip >
+        <span *brnTooltipContent   class="text-xs">Draw Circle</span>
+        <button hlmTooltipTrigger position="left" class="control" [ngClass]="{'chosen-control':drawType==='circle'}" (click)="activateDraw('circle')">
+            <svg viewBox="0 0 24 24" height="20" width="20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+                      stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </button>
+    </hlm-tooltip>
+
+    <!-- Polygon Button -->
+    <hlm-tooltip>
+        <span *brnTooltipContent class="text-xs">Draw Polygon</span>
+        <button hlmTooltipTrigger position="left" class="control rounded-b-md" [ngClass]="{'chosen-control':drawType==='polygon'}" (click)="activateDraw('polygon')">
+            <svg viewBox="0 0 24 24" height="20" width="20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                    <path d="M5 17V7M5 17C3.89543 17 3 17.8954 3 19C3 20.1046 3.89543 21 5 21C6.10457 21 7 20.1046 7 19M5 17C6.10457 17 7 17.8954 7 19M5 7C6.10457 7 7 6.10457 7 5M5 7C3.89543 7 3 6.10457 3 5C3 3.89543 3.89543 3 5 3C6.10457 3 7 3.89543 7 5M7 5H17M17 5C17 6.10457 17.8954 7 19 7C20.1046 7 21 6.10457 21 5C21 3.89543 20.1046 3 19 3C17.8954 3 17 3.89543 17 5ZM7 19H17M17 19C17 20.1046 17.8954 21 19 21C20.1046 21 21 20.1046 21 19C21 17.8954 20.1046 17 19 17C17.8954 17 17 17.8954 17 19ZM17.9247 6.6737L15.1955 10.3776M15.1955 13.6223L17.9222 17.3223M16 12C16 13.1046 15.1046 14 14 14C12.8954 14 12 13.1046 12 12C12 10.8954 12.8954 10 14 10C15.1046 10 16 10.8954 16 12Z"
+                          stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </g>
+            </svg>
+        </button>
+    </hlm-tooltip>
+</div>
