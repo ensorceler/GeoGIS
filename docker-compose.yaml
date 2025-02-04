@@ -1,0 +1,11 @@
+#version: '3.8'
+
+services:
+  electron:
+    build:
+      context: ./electron
+      #dockerfile: Dockerfile
+    container_name: geogis-electron
+    ports:
+      - "4444:80"  # Map port 80 of the container to port 4444 on the host
+    restart: always
