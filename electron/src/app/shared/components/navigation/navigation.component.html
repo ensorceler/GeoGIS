@@ -23,7 +23,6 @@
                         New Window
                         <hlm-menu-shortcut>⌘N</hlm-menu-shortcut>
                     </button>
-                    <button hlmMenuItem disabled>New Incognito Window</button>
                 </hlm-menu-group>
 
                 <hlm-menu-separator/>
@@ -64,11 +63,6 @@
 
                 <hlm-menu-separator/>
 
-                <button hlmMenuItem [brnMenuTriggerFor]="find">
-                    Share
-                    <hlm-menu-item-sub-indicator/>
-                </button>
-
                 <hlm-menu-separator/>
 
                 <button hlmMenuItem>Cut</button>
@@ -76,25 +70,16 @@
                 <button hlmMenuItem>Paste</button>
             </hlm-menu>
         </ng-template>
-        <ng-template #find>
-            <hlm-sub-menu>
-                <button hlmMenuItem>Search the web</button>
-                <hlm-menu-separator/>
-                <button hlmMenuItem>Find...</button>
-                <button hlmMenuItem>Find Next</button>
-                <button hlmMenuItem>Find Previous</button>
-            </hlm-sub-menu>
-        </ng-template>
 
         <ng-template #view>
             <hlm-menu variant="menubar">
-                <button hlmMenuItemCheckbox>
+                <button hlmMenuItemCheckbox [checked]="homeService.mapView()==='map'"  (click)="changeMapView('map')">
                     <hlm-menu-item-check/>
-                    Always Show Bookmarks Bar
+                    Show Map View
                 </button>
-                <button hlmMenuItemCheckbox checked>
+                <button hlmMenuItemCheckbox [checked]="homeService.mapView()==='globe'" (click)="changeMapView('globe')">
                     <hlm-menu-item-check/>
-                    Always Show Full URLs
+                    Show Globe View
                 </button>
                 <hlm-menu-separator/>
                 <button inset hlmMenuItem>

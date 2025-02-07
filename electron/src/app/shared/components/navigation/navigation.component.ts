@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {
   HlmMenuBarComponent, HlmMenuBarItemDirective,
   HlmMenuComponent, HlmMenuGroupComponent, HlmMenuItemCheckboxDirective, HlmMenuItemCheckComponent,
@@ -10,10 +10,7 @@ import {
   HlmSubMenuComponent
 } from "@spartan-ng/ui-menu-helm";
 import {BrnMenuTriggerDirective} from "@spartan-ng/brain/menu";
-
-function HlmButtonDirective() {
-
-}
+import {HomeService} from "../../services/home.service";
 
 @Component({
   selector: 'app-navigation',
@@ -40,5 +37,12 @@ function HlmButtonDirective() {
   styleUrl: './navigation.component.css'
 })
 export class NavigationComponent {
+
+  homeService=inject(HomeService);
+
+  changeMapView(view:"map"|"globe"){
+    console.log("map view =>",this.homeService.mapView());
+    this.homeService.mapView.set(view);
+  }
 
 }

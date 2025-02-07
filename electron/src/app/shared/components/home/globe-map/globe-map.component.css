@@ -1,0 +1,5 @@
+.globe-container {
+    height: calc(100vh - 3rem);
+    width: 100vw;
+    cursor: grab;
+}
